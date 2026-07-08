@@ -1,4 +1,5 @@
 import streamlit as st
+from src.graph_search import astar, NODES
 import requests
 import time
 
@@ -9,12 +10,17 @@ st.markdown(r"Mengorkestrasikan *Forecasting (Exponential Smoothing)* dan *A\* S
 
 # Form Input
 with st.form("routing_form"):
-    gudang = st.selectbox("Pilih Gudang Awal:", ["Gudang_Ngamprah", "Lokasi_Ngawur"]) # Sengaja tambah error trigger
+    # Filter dinamis untuk Gudang (semua yang diawali "Gudang_")
+    daftar_gudang = [n for n in NODES if n.startswith("Gudang_")]
+    gudang = st.selectbox("Pilih Gudang Awal:", daftar_gudang)
+    
     mode = st.radio("Mode Penentuan Target:", ["Otomatis (AI Forecasting)", "Manual (Pilih Gerai)"])
     
     gerai = "AUTO"
     if mode == "Manual (Pilih Gerai)":
-        gerai = st.selectbox("Pilih Gerai Tujuan:", ["Gerai_Lembang", "Gerai_Batujajar", "Gerai_Gununghalu", "Gerai_Fiktif"])
+        # Filter dinamis untuk Gerai (semua kecuali gudang + dummy test)
+        daftar_gerai = [n for n in NODES if n != "Gudang_Ngamprah"] + ["Gerai_Fiktif (Test Error)"]
+        gerai = st.selectbox("Pilih Gerai Tujuan:", daftar_gerai)
         
     submitted = st.form_submit_button("Hitung Rute Optimal")
 
