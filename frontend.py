@@ -5,7 +5,7 @@ import time
 st.set_page_config(page_title="KDMP AI Supply Chain", layout="centered")
 
 st.title("🚛 Optimasi Distribusi Rantai Pasok Terintegrasi")
-st.markdown("Mengorkestrasikan *Forecasting (Exponential Smoothing)* dan *A\* Search* untuk menentukan rute prioritas.")
+st.markdown(r"Mengorkestrasikan *Forecasting (Exponential Smoothing)* dan *A\* Search* untuk menentukan rute prioritas.")
 
 # Form Input
 with st.form("routing_form"):
