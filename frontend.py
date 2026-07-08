@@ -34,7 +34,8 @@ if submitted:
         time.sleep(1) # Simulasi network delay
         try:
             # Tembak ke FastAPI (Pastikan URL & port sesuai dengan Uvicorn Anda)
-            res = requests.post("manajemen-inventaris-rantai-pasok-terintegrasi-production.up.railway.app", json=payload)
+            url = "https://manajemen-inventaris-rantai-pasok-terintegrasi-production.up.railway.app/api/v1/distribute"
+            res = requests.post(url, json=payload)
             data = res.json()
             
             if res.status_code == 200:
