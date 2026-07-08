@@ -1,0 +1,13 @@
+source,destination
+Gudang_Ngamprah,Gerai_Padalarang
+Gudang_Ngamprah,Gerai_Batujajar
+Gudang_Ngamprah,Gerai_Cikalongwetan
+Gerai_Padalarang,Gerai_Cipatat
+Gerai_Cipatat,Gerai_Cikalongwetan
+Gerai_Cikalongwetan,Gerai_Parongpong
+Gerai_Batujajar,Gerai_Cililin
+Gerai_Parongpong,Gerai_Lembang
+Gerai_Lembang,Gerai_Cisarua
+Gerai_Cililin,Gerai_Sindangkerta
+Gerai_Sindangkerta,Gerai_Cipongkor
+Gerai_Cipongkor,Gerai_Gununghalu
